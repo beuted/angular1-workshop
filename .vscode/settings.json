@@ -7,7 +7,8 @@
         "**/node_modules": true, // this excludes all folders 
                                  // named "node_modules" from 
                                  // the explore tree
-
+        "**/dist": true,         // this excludes all webpack build folders
+        "**/build/coverage": true,
         // alternative version
         "node_modules": true    // this excludes the folder 
                                 // only from the root of

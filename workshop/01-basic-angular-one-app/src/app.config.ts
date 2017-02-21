@@ -1,4 +1,4 @@
-export default function routing($urlRouterProvider, $locationProvider) {
+export default function routing($urlRouterProvider: angular.ui.IUrlRouterProvider, $locationProvider: angular.ILocationProvider) {
   $locationProvider.html5Mode(true);
   $urlRouterProvider.otherwise('/');
 
