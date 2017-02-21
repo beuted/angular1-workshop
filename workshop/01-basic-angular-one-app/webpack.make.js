@@ -6,9 +6,11 @@ var autoprefixer = require('autoprefixer-core');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+
+// helper functions
 var path = require('path');
 var _root = path.resolve(__dirname, '..');
-function root(args) {
+function findAbsolutePath(args) {
   args = Array.prototype.slice.call(arguments, 0);
   return path.join.apply(path, [_root].concat(args));
 }
@@ -98,13 +100,13 @@ module.exports = function makeWebpackConfig (options) {
   config.module = {
     preLoaders: [],
     loaders: [{
-      // JS LOADER
+      // TS LOADER
       // Reference: https://github.com/s-panferov/awesome-typescript-loader
       // Transpile .ts files using awesome-typescript-loader
       // Compiles Typescript into ES5 code
       test: /\.ts$/,
       loader: 'awesome-typescript-loader',
-      options: { configFileName: root('src', 'tsconfig.json') }
+      options: { configFileName: findAbsolutePath('src', 'tsconfig.json') }
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
