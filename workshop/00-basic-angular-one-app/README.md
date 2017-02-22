@@ -5,8 +5,12 @@ This will be our starting point. This project main technologies are:
 * `angular` the js framework on top of wich we are going to build our app
 * `jasmine` the test-framework we are goin to use to for unit-testing 
 
-## Running the app locally
+## Setting up the app locally
 * [Install node](https://nodejs.org)
 * run `$ npm install`
-* run `$ npm install -g webpack-dev-server`
-* run `$ npm run dev`
+
+## Commands
+* Run app for local development: `$ npm run dev`
+* Build for production: `$ npm run build`
+* Run unit-tests: `$ npm run test`
+* Run unit-tests for local development: `$ npm run test:live`

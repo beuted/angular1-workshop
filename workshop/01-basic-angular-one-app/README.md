@@ -1,15 +1,26 @@
 # Angular 1 and webpack
 
-based on http://angular-tips.com/blog/2015/06/using-angular-1-dot-x-with-es6-and-webpack/
-
 After looking around and explaining what all this ugly configuration is for, we are going to transform this application from JS to TS progressively.
 
-## Running the app locally
+## Setting up the app locally
 * [Install node](https://nodejs.org)
 * run `$ npm install`
-* run `$ npm install -g webpack-dev-server`
-* run `$ npm run dev`
 
+## Commands
+* Run app for local development: `$ npm run dev`
+* Build for production: `$ npm run build`
+* Run unit-tests: `$ npm run test`
+* Run unit-tests for local development: `$ npm run test:live`
+
+
+# Adding webpack
+
+[Webpack](https://webpack.github.io) is a module bundler that support es6 syntax imports. Webpack can only process JavaScript natively,
+but loaders are used to transform other resources into JavaScript. By doing so, **every resource forms a module.**
+
+Webpack will handle for us the dependency resolution and bundle all the js files **in the right order** based on there ES6 imports
+
+The main entry point for all
 
 # Modifying karma configuration
 
@@ -21,3 +32,7 @@ After looking around and explaining what all this ugly configuration is for, we 
       'src/tests.webpack.js': ['webpack', 'sourcemap']
     },
 ```
+
+# Jasmine Unit tests
+
+We are going to 

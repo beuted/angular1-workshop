@@ -1,9 +1,17 @@
 # Let's add Typescript
 
-
 Something we haven't seen in the [typescript workshop](https://github.com/beuted/typescript-workshop) is how to organise a project
 with different typescript files (because obviously we are not going to put all these classes in one file)
 
+## Setting up the app locally
+* [Install node](https://nodejs.org)
+* run `$ npm install`
+
+## Commands
+* Run app for local development: `$ npm run dev`
+* Build for production: `$ npm run build`
+* Run unit-tests: `$ npm run test`
+* Run unit-tests for local development: `$ npm run test:live`
 
 ## tsconfig.json
 
