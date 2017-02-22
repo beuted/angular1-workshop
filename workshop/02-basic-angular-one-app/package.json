@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "A workflow for Angular made with Webpack",
   "scripts": {
-    "build": "webpack --display-error-details --config webpack.build.js --bail -p",
-    "dev": "webpack-dev-server --history-api-fallback --hot --inline --progress",
-    "test": "karma start",
-    "test:live": "karma start --auto-watch --no-single-run"
+    "build": "node_modules/.bin/webpack --display-error-details --config webpack.build.js --bail -p",
+    "dev": "node_modules/.bin/webpack-dev-server --history-api-fallback --hot --inline --progress",
+    "test": "node_modules/.bin/karma start",
+    "test:live": "node_modules/.bin/karma start --auto-watch --no-single-run"
   },
   "repository": {
     "type": "git",
