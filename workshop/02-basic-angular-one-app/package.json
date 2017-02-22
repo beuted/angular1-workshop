@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A workflow for Angular made with Webpack",
   "scripts": {
-    "build": "webpack --config webpack.build.js --bail -p",
+    "build": "webpack --display-error-details --config webpack.build.js --bail -p",
     "dev": "webpack-dev-server --history-api-fallback --hot --inline --progress",
     "test": "karma start",
     "test:live": "karma start --auto-watch --no-single-run"
@@ -35,7 +35,14 @@
     "webpack-dev-server": "1.9.0"
   },
   "devDependencies": {
+    "@types/angular": "^1.6.6",
+    "@types/angular-mocks": "^1.5.9",
+    "@types/angular-ui-router": "^1.1.36",
+    "@types/jasmine": "^2.5.43",
+    "@types/webpack": "^2.2.6",
+    "@types/webpack-env": "^1.13.0",
     "angular-mocks": "1.4.1",
+    "awesome-typescript-loader": "^3.0.4",
     "isparta-instrumenter-loader": "0.2.1",
     "jasmine-core": "2.3.4",
     "karma": "0.12.37",
@@ -46,6 +53,7 @@
     "karma-spec-reporter": "0.0.19",
     "karma-webpack": "1.5.1",
     "null-loader": "0.1.1",
-    "phantomjs": "1.9.17"
+    "phantomjs": "1.9.17",
+    "typescript": "^2.1.6"
   }
 }

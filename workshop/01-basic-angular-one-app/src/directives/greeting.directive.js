@@ -1,5 +1,4 @@
-// Depends from:
-// * angular.js
+import angular from 'angular';
 
 function greeting() {
   return {
@@ -11,5 +10,6 @@ function greeting() {
   }
 }
 
-angular.module('directives.greeting', [])
-  .directive('greeting', greeting);
+export default angular.module('directives.greeting', [])
+  .directive('greeting', greeting)
+  .name;

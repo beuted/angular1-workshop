@@ -1,14 +1,18 @@
-import './home.css';
+// Depends from:
+// * angular.js
+// * angular-ui-router.js
+// * home.routes.js
+// * home.controller.js
+// * ../../services/randomNames.service.js
+// * ../../directives/greeting.directive.js
 
-import angular from 'angular';
-import uirouter from 'angular-ui-router';
-
-import routing from './home.routes';
-import HomeController from './home.controller';
-import randomNames from '../../services/randomNames.service';
-import greeting    from '../../directives/greeting.directive';
-
-export default angular.module('app.home', [uirouter, randomNames, greeting])
-  .config(routing)
-  .controller('HomeController', HomeController)
-  .name;
+angular.module('app.home', ['ui.router', 'services.random-names', 'directives.greeting'])
+  .config(['$stateProvider', function($stateProvider) {
+    $stateProvider
+      .state('home', {
+        url: '/',
+        templateUrl: './features/home/home.html',
+        controller: 'HomeController',
+        controllerAs: 'home'
+      });
+  }]);

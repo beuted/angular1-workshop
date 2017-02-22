@@ -1,8 +1,9 @@
-# Angular 1 and webpack
+# Plain ES5 Angular 1 App
 
-based on http://angular-tips.com/blog/2015/06/using-angular-1-dot-x-with-es6-and-webpack/
-
-This will be our starting point. After looking around and explaining what all this ugly configuration is for, we are going to transform this application from JS to TS progressively.
+This will be our starting point. This project main technologies are:
+* `npm` to load our development dependencies only
+* `angular` the js framework on top of wich we are going to build our app
+* `jasmine` the test-framework we are goin to use to for unit-testing 
 
 ## Running the app locally
 * [Install node](https://nodejs.org)

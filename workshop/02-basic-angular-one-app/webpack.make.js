@@ -6,6 +6,15 @@ var autoprefixer = require('autoprefixer-core');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+
+// helper functions
+var path = require('path');
+var _root = path.resolve(__dirname, '..');
+function findAbsolutePath(args) {
+  args = Array.prototype.slice.call(arguments, 0);
+  return path.join.apply(path, [_root].concat(args));
+}
+
 module.exports = function makeWebpackConfig (options) {
   /**
    * Environment type
@@ -32,7 +41,7 @@ module.exports = function makeWebpackConfig (options) {
     config.entry = {}
   } else {
     config.entry = {
-      app: './src/app.js'
+      app: './src/app.ts'
     }
   }
 
@@ -83,17 +92,21 @@ module.exports = function makeWebpackConfig (options) {
    * This handles most of the magic responsible for converting modules
    */
 
+  config.resolve = {
+      extensions: [ '', '.js', '.ts' ]
+  }
+
   // Initialize module
   config.module = {
     preLoaders: [],
     loaders: [{
-      // JS LOADER
-      // Reference: https://github.com/babel/babel-loader
-      // Transpile .js files using babel-loader
-      // Compiles ES6 and ES7 into ES5 code
-      test: /\.js$/,
-      loader: 'babel?optional=runtime',
-      exclude: /node_modules/
+      // TS LOADER
+      // Reference: https://github.com/s-panferov/awesome-typescript-loader
+      // Transpile .ts files using awesome-typescript-loader
+      // Compiles Typescript into ES5 code
+      test: /\.ts$/,
+      loader: 'awesome-typescript-loader',
+      options: { configFileName: findAbsolutePath('src', 'tsconfig.json') }
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
@@ -214,6 +227,7 @@ module.exports = function makeWebpackConfig (options) {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
+    //historyApiFallback: true,
     contentBase: './dist',
     stats: {
       modules: false,

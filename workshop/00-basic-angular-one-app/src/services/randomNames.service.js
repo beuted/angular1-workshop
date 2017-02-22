@@ -1,17 +1,17 @@
-import angular from 'angular';
+// Depends from:
+// * angular.js
 
-class RandomNames {
-  constructor() {
-    this.names = ['La Tronche', 'Fontaine', 'Vinoux', 'Saint Martin d\'Hères', 'Eybens', 'Sassenage', 'St Martin le Vinoux', 'Grenoble'];
-  }
+function RandomNames() {
+  this.names = ['La Tronche', 'Fontaine', 'Vinoux', 'Saint Martin d\'Hères', 'Eybens', 'Sassenage', 'St Martin le Vinoux', 'Grenoble'];
 
-  getName() {
-    const totalNames = this.names.length;
-    const rand = Math.floor(Math.random() * totalNames);
+  this.getName = function() {
+    var totalNames = this.names.length;
+    var rand = Math.floor(Math.random() * totalNames);
     return this.names[rand];
   }
+
+  return this;
 }
 
-export default angular.module('services.random-names', [])
-  .service('randomNames', RandomNames)
-  .name;
+angular.module('services.random-names', [])
+  .service('randomNames', RandomNames);

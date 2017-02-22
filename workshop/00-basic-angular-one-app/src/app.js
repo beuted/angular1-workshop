@@ -1,10 +1,14 @@
-import 'bootstrap/dist/css/bootstrap.css';
+// Depends from JS point of view from:
+// * angular.js
+// * angular-ui-router.js => for $urlRouterProvider
 
-import angular from 'angular';
-import uirouter from 'angular-ui-router';
+// Depends from Angular point view from:
+// * angular.js
+// * angular-ui-router.js
+// * features/home/index.js
 
-import routing from './app.config';
-import home from './features/home';
-
-angular.module('app', [uirouter, home])
-  .config(routing);
+angular.module('app', ['ui.router', 'app.home'])
+  .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
+    $locationProvider.html5Mode(true);
+    $urlRouterProvider.otherwise('/');
+  }]);
