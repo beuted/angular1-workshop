@@ -87,14 +87,6 @@ module.exports = function makeWebpackConfig (options) {
   config.module = {
     preLoaders: [],
     loaders: [{
-      // JS LOADER
-      // Reference: https://github.com/babel/babel-loader
-      // Transpile .js files using babel-loader
-      // Compiles ES6 and ES7 into ES5 code
-      test: /\.js$/,
-      loader: 'babel?optional=runtime',
-      exclude: /node_modules/
-    }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
       // Copy png, jpg, jpeg, gif, svg, woff, woff2, ttf, eot files to output
@@ -111,21 +103,6 @@ module.exports = function makeWebpackConfig (options) {
       loader: 'raw'
     }]
   };
-
-  // ISPARTA LOADER
-  // Reference: https://github.com/ColCh/isparta-instrumenter-loader
-  // Instrument JS files with Isparta for subsequent code coverage reporting
-  // Skips node_modules and files that end with .test.js
-  if (TEST) {
-    config.module.preLoaders.push({
-      test: /\.js$/,
-      exclude: [
-        /node_modules/,
-        /\.test\.js$/
-      ],
-      loader: 'isparta-instrumenter'
-    })
-  }
 
   // CSS LOADER
   // Reference: https://github.com/webpack/css-loader
@@ -214,6 +191,7 @@ module.exports = function makeWebpackConfig (options) {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
+    historyApiFallback: true,
     contentBase: './dist',
     stats: {
       modules: false,

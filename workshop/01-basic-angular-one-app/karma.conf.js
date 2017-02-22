@@ -14,9 +14,6 @@ module.exports = function karmaConfig (config) {
       // Set reporter to print detailed results to console
       'spec',
 
-      // Reference: https://github.com/karma-runner/karma-coverage
-      // Output code coverage files
-      'coverage'
     ],
 
     files: [
@@ -37,12 +34,6 @@ module.exports = function karmaConfig (config) {
     ],
 
     singleRun: true,
-
-    // Configure code coverage reporter
-    coverageReporter: {
-      dir: 'build/coverage/',
-      type: 'html'
-    },
 
     webpack: webpackConfig
   });
