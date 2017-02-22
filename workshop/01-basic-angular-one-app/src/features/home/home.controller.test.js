@@ -1,7 +1,7 @@
-import home from './index';
+home = require('./index');
 
 describe('Controller: Home', function() {
-  let $controller;
+  var $controller;
 
   beforeEach(angular.mock.module(home));
 
@@ -10,7 +10,7 @@ describe('Controller: Home', function() {
   }));
 
   it('name is initialized to World', function() {
-    let ctrl = $controller('HomeController');
+    var ctrl = $controller('HomeController');
     expect(ctrl.name).toBe('World');
   });
 });
