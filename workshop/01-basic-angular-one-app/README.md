@@ -9,3 +9,15 @@ After looking around and explaining what all this ugly configuration is for, we 
 * run `$ npm install`
 * run `$ npm install -g webpack-dev-server`
 * run `$ npm run dev`
+
+
+# Modifying karma configuration
+
+```
+    preprocessors: {
+      // Reference: http://webpack.github.io/docs/testing.html
+      // Reference: https://github.com/webpack/karma-webpack
+      // Convert files with webpack and load sourcemaps
+      'src/tests.webpack.js': ['webpack', 'sourcemap']
+    },
+```
