@@ -1,4 +1,4 @@
-HomeController = function(randomNames) {
+var HomeController = function(randomNames) {
   this.random = randomNames;
   this.name = 'World';
 

@@ -1,17 +1,19 @@
-import angular from 'angular';
+var angular = require('angular');
 
-class RandomNames {
-  constructor() {
-    this.names = ['La Tronche', 'Fontaine', 'Vinoux', 'Saint Martin d\'Hères', 'Eybens', 'Sassenage', 'St Martin le Vinoux', 'Grenoble'];
-  }
+var RandomNames = function() {
+  this.names = ['La Tronche', 'Fontaine', 'Vinoux', 'Saint Martin d\'Hères', 'Eybens', 'Sassenage', 'St Martin le Vinoux', 'Grenoble'];
 
-  getName() {
-    const totalNames = this.names.length;
-    const rand = Math.floor(Math.random() * totalNames);
+  this.getName = function() {
+    var totalNames = this.names.length;
+    var rand = Math.floor(Math.random() * totalNames);
     return this.names[rand];
   }
+
+  return this;
 }
 
-export default angular.module('services.random-names', [])
+var randomNameModule = angular.module('services.random-names', [])
   .service('randomNames', RandomNames)
   .name;
+
+module.exports = randomNameModule;

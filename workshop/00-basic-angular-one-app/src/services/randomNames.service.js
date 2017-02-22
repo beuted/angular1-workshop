@@ -1,7 +1,7 @@
 // Depends from:
 // * angular.js
 
-function RandomNames() {
+var RandomNames = function() {
   this.names = ['La Tronche', 'Fontaine', 'Vinoux', 'Saint Martin d\'Hères', 'Eybens', 'Sassenage', 'St Martin le Vinoux', 'Grenoble'];
 
   this.getName = function() {

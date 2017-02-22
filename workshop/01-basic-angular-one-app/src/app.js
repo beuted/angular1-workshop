@@ -1,10 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.css';
+require('bootstrap/dist/css/bootstrap.css');
 
-import angular from 'angular';
-import uirouter from 'angular-ui-router';
+angular = require('angular');
+uirouter = require('angular-ui-router');
 
-import routing from './app.config';
-import home from './features/home';
+routing = require('./app.config');
+home = require('./features/home');
 
 angular.module('app', [uirouter, home])
   .config(routing);

@@ -1,14 +1,23 @@
-import './home.css';
+require('./home.css');
 
-import angular from 'angular';
-import uirouter from 'angular-ui-router';
+angular = require('angular');
+uirouter = require('angular-ui-router');
 
-import routing from './home.routes';
-import HomeController from './home.controller';
-import randomNames from '../../services/randomNames.service';
-import greeting    from '../../directives/greeting.directive';
+HomeController = require('./home.controller');
+randomNames = require('../../services/randomNames.service');
+greeting    = require('../../directives/greeting.directive');
 
-export default angular.module('app.home', [uirouter, randomNames, greeting])
-  .config(routing)
+var homeModule = angular.module('app.home', [uirouter, randomNames, greeting])
+  .config(['$stateProvider', function($stateProvider) {
+      $stateProvider
+        .state('home', {
+          url: '/',
+          template: require('./home.html'),
+          controller: 'HomeController',
+          controllerAs: 'home'
+        });
+  }])
   .controller('HomeController', HomeController)
   .name;
+
+module.exports = homeModule;

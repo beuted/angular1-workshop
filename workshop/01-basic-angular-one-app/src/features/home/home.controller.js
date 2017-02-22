@@ -1,16 +1,18 @@
-export default class HomeController {
-  constructor(randomNames) {
-    this.random = randomNames;
-    this.name = 'World';
-  }
+var HomeController = function(randomNames) {
+  this.random = randomNames;
+  this.name = 'World';
 
-  changeToLocalName() {
+  this.changeToLocalName = function() {
     this.name = 'Grenoble';
   }
 
-  randomName() {
+  this.randomName = function() {
     this.name = this.random.getName();
   }
+
+  return this;
 }
 
 HomeController.$inject = ['randomNames'];
+
+module.exports = HomeController;

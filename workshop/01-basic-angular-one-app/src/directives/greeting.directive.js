@@ -1,6 +1,6 @@
-import angular from 'angular';
+angular = require('angular');
 
-function greeting() {
+var greeting = function() {
   return {
     restrict: 'E',
     scope: {
@@ -10,6 +10,8 @@ function greeting() {
   }
 }
 
-export default angular.module('directives.greeting', [])
+var greetingModule = angular.module('directives.greeting', [])
   .directive('greeting', greeting)
   .name;
+
+module.exports = greetingModule;
