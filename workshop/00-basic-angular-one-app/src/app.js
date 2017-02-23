@@ -7,8 +7,4 @@
 // * angular-ui-router.js
 // * features/home/module.js
 
-angular.module('app', ['ui.router', 'app.home'])
-  .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise('/');
-  }]);
+angular.module('app', ['app.home'])

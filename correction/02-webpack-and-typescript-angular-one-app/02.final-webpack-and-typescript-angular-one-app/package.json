@@ -1,0 +1,57 @@
+{
+  "name": "webpack-and-typescript-angular-one-app",
+  "version": "1.0.0",
+  "description": "An example of angular 1 app using webpack and typescript",
+  "scripts": {
+    "build": "node_modules/.bin/webpack --display-error-details --config webpack.build.js --bail -p",
+    "dev": "node_modules/.bin/webpack-dev-server --history-api-fallback --hot --inline --progress",
+    "test": "node_modules/.bin/karma start",
+    "test:live": "node_modules/.bin/karma start --auto-watch --no-single-run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beuted/angular1-workshop/workshop/01-basic-angular-one-app"
+  },
+  "author": "Benoit Jehanno",
+  "license": "MIT",
+  "homepage": "https://github.com/beuted/angular1-workshop/workshop/01-basic-angular-one-app",
+  "dependencies": {
+    "angular": "1.3.16",
+    "angular-ui-router": "0.2.15",
+    "bootstrap": "3.3.5"
+  },
+  "devDependencies": {
+    "@types/angular": "1.6.6",
+    "@types/angular-mocks": "1.5.9",
+    "@types/angular-ui-router": "1.1.36",
+    "@types/jasmine": "2.5.43",
+    "@types/node": "^7.0.5",
+    "@types/webpack": "2.2.6",
+    "@types/webpack-env": "1.13.0",
+    "angular-mocks": "1.4.1",
+    "autoprefixer-core": "5.2.0",
+    "awesome-typescript-loader": "3.0.4",
+    "babel-core": "5.5.8",
+    "babel-loader": "5.1.4",
+    "babel-runtime": "5.5.8",
+    "css-loader": "0.14.5",
+    "extract-text-webpack-plugin": "0.8.2",
+    "file-loader": "0.8.4",
+    "html-webpack-plugin": "1.5.2",
+    "jasmine-core": "2.3.4",
+    "karma-jasmine": "0.3.5",
+    "karma-phantomjs-launcher": "0.2.0",
+    "karma-sourcemap-loader": "0.3.5",
+    "karma-spec-reporter": "0.0.19",
+    "karma-webpack": "2.0.2",
+    "node-libs-browser": "0.5.2",
+    "null-loader": "0.1.1",
+    "phantomjs": "1.9.17",
+    "postcss-loader": "0.4.4",
+    "raw-loader": "0.5.1",
+    "style-loader": "0.12.3",
+    "typescript": "2.1.6",
+    "webpack": "1.9.11",
+    "webpack-dev-server": "1.9.0"
+  }
+}
