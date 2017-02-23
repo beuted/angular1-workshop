@@ -1,8 +1,10 @@
+var homeTemplate = require('./home.html');
+
 var RoutingConfiguration = function($stateProvider) {
     $stateProvider
         .state('home', {
           url: '/',
-          template: require('./home.html'),
+          template: homeTemplate,
           controller: 'HomeController',
           controllerAs: 'home'
         });

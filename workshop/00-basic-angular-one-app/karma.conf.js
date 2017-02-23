@@ -19,9 +19,11 @@ module.exports = function karmaConfig (config) {
       'node_modules/angular-ui-router/release/angular-ui-router.js',
       'node_modules/angular-mocks/angular-mocks.js',
       'src/services/randomNames.service.js',
+      'src/services/module.js',
       'src/directives/greeting.directive.js',
-      'src/features/home/module.js',
+      'src/directives/module.js',
       'src/features/home/home.controller.js',
+      'src/features/home/module.js',
       'src/app.js',
       
       // Grab all files in the app folder that ends with .test.js

@@ -7,8 +7,8 @@ describe('Controller: Home', function() {
     $controller = _$controller_;
   }));
 
-  it('name is initialized to World', function() {
+  it('name is initialized to Human', function() {
     var ctrl = $controller('HomeController');
-    expect(ctrl.name).toBe('World');
+    expect(ctrl.name).toBe('Human');
   });
 });

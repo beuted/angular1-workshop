@@ -1,19 +1,22 @@
 import * as angular from 'angular';
 
+interface ICharacter {
+  name: string;
+}
+
 export class RandomNamesService {
   private names: string[];
 
-  constructor() {
-    this.names = ['La Tronche', 'Fontaine', 'Vinoux', 'Saint Martin d\'Hères', 'Eybens', 'Sassenage', 'St Martin le Vinoux', 'Grenoble'];
+  constructor(private $http: angular.IHttpService) {
   }
 
-  public getName() {
-    const totalNames = this.names.length;
-    const rand = Math.floor(Math.random() * totalNames);
-    return this.names[rand];
+  public getName(characterId: number): angular.IPromise<string> {
+    return this.$http.get('http://swapi.co/api/people/' + characterId)
+      .then((res: angular.IHttpPromiseCallbackArg<ICharacter>) => {
+        return res.data.name;
+      }).catch((err) => {
+        return err.data;
+      });
   }
 }
 
-export const RandomNameModuleName = angular.module('services.random-names', [])
-  .service('randomNames', RandomNamesService)
-  .name;

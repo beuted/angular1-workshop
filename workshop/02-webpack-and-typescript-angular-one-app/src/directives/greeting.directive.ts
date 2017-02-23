@@ -1,15 +1,13 @@
 import * as angular from 'angular';
 
-function GreetingDirective() {
+export function GreetingDirective() {
   return {
     restrict: 'E',
     scope: {
       name: '='
     },
-    template: '<h1>Hello, {{name}}</div>'
+    template: '<h1>Hello, {{name}}<br> Welcome to ##TODO##</h1>'
   }
 }
 
-export const GreetingModuleName = angular.module('directives.greeting', [])
-  .directive('greeting', GreetingDirective)
-  .name;
+//TODO: Modify this directive to be able to display a location

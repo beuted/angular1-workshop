@@ -1,19 +1,16 @@
 var angular = require('angular');
 
-var RandomNamesService = function() {
-  this.names = ['La Tronche', 'Fontaine', 'Vinoux', 'Saint Martin d\'Hères', 'Eybens', 'Sassenage', 'St Martin le Vinoux', 'Grenoble'];
-
-  this.getName = function() {
-    var totalNames = this.names.length;
-    var rand = Math.floor(Math.random() * totalNames);
-    return this.names[rand];
+var RandomNamesService = function($http) {
+  this.getName = function(characterId) {
+    return $http.get('http://swapi.co/api/people/' + characterId)
+      .then(function(res) {
+        return res.data.name;
+      }).catch(function(err){
+        return err.data;
+      });
   }
 
   return this;
 }
 
-var RandomNamesModuleName = angular.module('services.random-names', [])
-  .service('randomNames', RandomNamesService)
-  .name;
-
-module.exports = RandomNamesModuleName;
+module.exports = RandomNamesService;

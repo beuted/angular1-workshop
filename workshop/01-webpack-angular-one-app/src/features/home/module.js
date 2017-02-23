@@ -1,14 +1,14 @@
 require('./home.css');
 
-angular = require('angular');
-uirouterName = require('angular-ui-router');
+var angular = require('angular');
+var uirouterName = require('angular-ui-router');
 
-RoutingConfiguration = require('./home.routes.js');
-HomeController = require('./home.controller');
-RandomNamesServiceName = require('../../services/randomNames.service');
-GreetingDirectiveName = require('../../directives/greeting.directive');
+var RoutingConfiguration = require('./home.routes.js');
+var HomeController = require('./home.controller');
+var ServicesModuleName = require('../../services/module');
+var DirectivesModuleName = require('../../directives/module');
 
-var HomeModuleName = angular.module('app.home', [uirouterName, RandomNamesServiceName, GreetingDirectiveName])
+var HomeModuleName = angular.module('app.home', [uirouterName, ServicesModuleName, DirectivesModuleName])
   .config(RoutingConfiguration)
   .controller('HomeController', HomeController)
   .name;

@@ -3,16 +3,6 @@
 Something we haven't seen in the [typescript workshop](https://github.com/beuted/typescript-workshop) is how to organise a project
 with different typescript files (because obviously we are not going to put all these classes in one file)
 
-## Setting up the app locally
-* [Install node](https://nodejs.org)
-* run `$ npm install`
-
-## Commands
-* Run app for local development: `$ npm run dev`
-* Build for production: `$ npm run build`
-* Run unit-tests: `$ npm run test`
-* Run unit-tests for local development: `$ npm run test:live`
-
 ## tsconfig.json
 
 ```json
@@ -69,9 +59,10 @@ Let webpack know that we need to take into account typescript files:
   }
 ```
 
-## node packages
+## Typing of external libraries
 
-We now need to import several typing modules in order to be able to use typing for dependency libraries
+External libraries we are using are still written in javascript. Fortunately there is a way to add typing to this libraries, it's `.d.ts` files.
+The way we can import them, so that Typescript is aware of them, is simply by registering them in npm `package.json`.
 
 ```
 $ npm install --save-dev @types/angular
@@ -80,15 +71,33 @@ $ npm install --save-dev @types/angular-mocks
 $ npm install --save-dev @types/jasmine
 $ npm install --save-dev @types/webpack
 $ npm install --save-dev @types/webpack-env
-
 ```
 
+After doing that your IDE should start should much less red and compilation shoulds go fine.
 
 ## Fixing the imports
 
 TODO
 
+New dependencies are needed.
+
 ## Enforcing types
 
 Let's go full types and enforce Explicite typing everywhere. In tsconfig.json change `"noImplicitAny": false` to `"noImplicitAny": true` and see what happens.
 
+# Workshop
+
+## Setting up the app locally
+* [Install node](https://nodejs.org)
+* run `$ npm install`
+
+## Commands
+* Run app for local development: `$ npm run dev`
+* Build for production: `$ npm run build`
+* Run unit-tests: `$ npm run test`
+* Run unit-tests for local development: `$ npm run test:live`
+
+## When your app is working fine:
+
+1. Go in the typescript configuration file `tsconfig.json` at the root of the project and change `noImplicitAny` to `true`, try fixing the build.
+2. Adapt your previous code with the new ES6 way of writing dependencies

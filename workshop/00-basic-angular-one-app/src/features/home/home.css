@@ -1,3 +1,8 @@
 .home-header {
   text-align: center;
 }
+
+.home-header-title {
+  font-weight: bold;
+  margin-bottom: 50px;
+}

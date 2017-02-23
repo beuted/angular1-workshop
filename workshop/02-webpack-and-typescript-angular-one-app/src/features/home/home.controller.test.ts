@@ -11,7 +11,7 @@ import * as angular from 'angular';
 import 'angular-mocks';
 
 // The next to imports
-import { HomeModuleName } from './index';
+import { HomeModuleName } from './module';
 import { HomeController } from './home.controller';
 
 describe('Controller: Home', function() {

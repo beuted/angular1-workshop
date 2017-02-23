@@ -6,12 +6,10 @@ var GreetingDirective = function() {
     scope: {
       name: '='
     },
-    template: '<h1>Hello, {{name}}</div>'
+    template: '<h1>Hello, {{name}}<br> Welcome to ##TODO##</h1>'
   }
 }
 
-var greetingModuleName = angular.module('directives.greeting', [])
-  .directive('greeting', GreetingDirective)
-  .name;
+//TODO: Modify this directive to be able to display a location
 
-module.exports = greetingModuleName;
+module.exports = GreetingDirective;

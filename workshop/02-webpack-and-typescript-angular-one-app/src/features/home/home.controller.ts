@@ -3,19 +3,24 @@ import { RandomNamesService } from '../../services/randomNames.service';
 export class HomeController {
   public name: string;
   
-  private random: RandomNamesService;
+  private randomNamesService: RandomNamesService;
 
-  constructor(randomNames: RandomNamesService) {
-    this.random = randomNames;
+  constructor(randomNamesService: RandomNamesService) {
+    this.randomNamesService = randomNamesService;
     this.name = 'World';
   }
 
-  changeToLocalName() {
-    this.name = 'Grenoble';
+  changeToAbsurdName() {
+    this.name = 'Spock';
   }
 
   randomName() {
-    this.name = this.random.getName();
+    // Get a random character id
+    var i = Math.floor(Math.random() * (87 - 1)) + 1;
+
+    this.randomNamesService.getName(i).then((name) => {
+      this.name = name;
+    });
   }
 }
 

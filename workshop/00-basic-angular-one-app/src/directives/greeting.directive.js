@@ -1,15 +1,14 @@
 // Depends from:
 // * angular.js
 
-function greeting() {
+var GreetingDirective = function() {
   return {
     restrict: 'E',
     scope: {
       name: '='
     },
-    template: '<h1>Hello, {{name}}</div>'
+    template: '<h1>Hello, {{name}}<br> Welcome to ##TODO##</h1>'
   }
 }
 
-angular.module('directives.greeting', [])
-  .directive('greeting', greeting);
+//TODO: Modify this directive to be able to display a location

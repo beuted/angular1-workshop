@@ -1,17 +1,24 @@
-var HomeController = function(randomNames) {
-  this.random = randomNames;
-  this.name = 'World';
+var HomeController = function(randomNamesService) {
+  var that = this;
 
-  this.changeToLocalName = function() {
-    this.name = 'Grenoble';
+  this.randomNamesService = randomNamesService;
+  this.name = 'Human';
+
+  this.changeToAbsurdName = function() {
+    this.name = 'Spock';
   }
 
   this.randomName = function() {
-    this.name = this.random.getName();
+    // Get a random character id
+    var i = Math.floor(Math.random() * (87 - 1)) + 1;
+
+    that.randomNamesService.getName(i).then(function(name) {
+      that.name = name;
+    });
   }
 
   return this;
 }
 
-angular.module('app.home')
-  .controller('HomeController', ['randomNames', HomeController])
+// TODO: Modify this controller to get random planet from your service and pass it to the directive
+  

@@ -5,10 +5,10 @@ import * as uirouter from 'angular-ui-router';
 
 import { routes } from './home.routes';
 import { HomeController } from './home.controller';
-import { RandomNameModuleName } from '../../services/randomNames.service';
-import { GreetingModuleName } from '../../directives/greeting.directive';
+import { ServicesModuleName } from '../../services/module';
+import { DirectivesModuleName } from '../../directives/module';
 
-export const HomeModuleName = angular.module('app.home', <string[]>[uirouter, RandomNameModuleName, GreetingModuleName])
+export const HomeModuleName = angular.module('app.home', <string[]>[uirouter, ServicesModuleName, DirectivesModuleName])
   .config(routes)
   .controller('HomeController', HomeController)
   .name;
