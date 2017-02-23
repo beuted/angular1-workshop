@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-var RandomNames = function() {
+var RandomNamesService = function() {
   this.names = ['La Tronche', 'Fontaine', 'Vinoux', 'Saint Martin d\'Hères', 'Eybens', 'Sassenage', 'St Martin le Vinoux', 'Grenoble'];
 
   this.getName = function() {
@@ -12,8 +12,8 @@ var RandomNames = function() {
   return this;
 }
 
-var randomNameModule = angular.module('services.random-names', [])
-  .service('randomNames', RandomNames)
+var RandomNamesModuleName = angular.module('services.random-names', [])
+  .service('randomNames', RandomNamesService)
   .name;
 
-module.exports = randomNameModule;
+module.exports = RandomNamesModuleName;

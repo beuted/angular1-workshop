@@ -1,5 +1,5 @@
-var HomeController = function(randomNames) {
-  this.random = randomNames;
+var HomeController = function(RandomNamesService) {
+  this.random = RandomNamesService;
   this.name = 'World';
 
   this.changeToLocalName = function() {

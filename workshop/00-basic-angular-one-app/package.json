@@ -1,9 +1,9 @@
 {
-  "name": "angular-one-app",
+  "name": "basic-angular-one-app",
   "version": "1.0.0",
-  "description": "A workflow for Angular made with Webpack",
+  "description": "An example of angular 1 app",
   "scripts": {
-    "build": "echo \"We are not building anything in this example, it's just plain ES5 withou dependency injection :)\"",
+    "build": "echo \"We are not building anything in this example, it's just plain ES5 without dependency injection :)\"",
     "dev": "./node_modules/.bin/live-server ./src --mount=\"/vendors\":\"./node_modules\"",
     "test": "./node_modules/.bin/karma start",
     "test:live": "./node_modules/.bin/karma start --auto-watch --no-single-run"

@@ -1,6 +1,6 @@
 angular = require('angular');
 
-var greeting = function() {
+var GreetingDirective = function() {
   return {
     restrict: 'E',
     scope: {
@@ -10,8 +10,8 @@ var greeting = function() {
   }
 }
 
-var greetingModule = angular.module('directives.greeting', [])
-  .directive('greeting', greeting)
+var greetingModuleName = angular.module('directives.greeting', [])
+  .directive('greeting', GreetingDirective)
   .name;
 
-module.exports = greetingModule;
+module.exports = greetingModuleName;

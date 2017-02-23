@@ -20,7 +20,7 @@ module.exports = function karmaConfig (config) {
       'node_modules/angular-mocks/angular-mocks.js',
       'src/services/randomNames.service.js',
       'src/directives/greeting.directive.js',
-      'src/features/home/index.js',
+      'src/features/home/module.js',
       'src/features/home/home.controller.js',
       'src/app.js',
       

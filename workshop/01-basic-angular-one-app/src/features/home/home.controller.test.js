@@ -1,9 +1,9 @@
-var home = require('./index');
+var HomeModuleName = require('./module');
 
 describe('Controller: Home', function() {
   var $controller;
 
-  beforeEach(angular.mock.module(home));
+  beforeEach(angular.mock.module(HomeModuleName));
 
   beforeEach(angular.mock.inject(function(_$controller_) {
     $controller = _$controller_;

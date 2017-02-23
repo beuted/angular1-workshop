@@ -5,7 +5,7 @@
 // Depends from Angular point view from:
 // * angular.js
 // * angular-ui-router.js
-// * features/home/index.js
+// * features/home/module.js
 
 angular.module('app', ['ui.router', 'app.home'])
   .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
