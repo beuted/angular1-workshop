@@ -1,4 +1,4 @@
-home = require('./index');
+var home = require('./index');
 
 describe('Controller: Home', function() {
   var $controller;

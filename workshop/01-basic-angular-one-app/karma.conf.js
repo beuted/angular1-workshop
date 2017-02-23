@@ -13,7 +13,6 @@ module.exports = function karmaConfig (config) {
       // Reference: https://github.com/mlex/karma-spec-reporter
       // Set reporter to print detailed results to console
       'spec',
-
     ],
 
     files: [
