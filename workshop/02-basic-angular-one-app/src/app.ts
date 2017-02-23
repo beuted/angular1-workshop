@@ -1,10 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.css';
 
 import * as angular from 'angular';
-import * as uirouter from 'angular-ui-router';
+import * as uirouterModule from 'angular-ui-router';
 
-import routing from './app.config';
-import home from './features/home';
+import { routes } from './app.config';
+import { HomeModuleName } from './features/home';
 
-angular.module('app', <string[]>[uirouter, home])
-  .config(routing);
+angular.module('app', <string[]>[uirouterModule, HomeModuleName])
+  .config(routes);

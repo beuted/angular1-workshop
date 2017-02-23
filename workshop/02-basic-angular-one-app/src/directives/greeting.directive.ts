@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 
-function greeting() {
+function GreetingDirective() {
   return {
     restrict: 'E',
     scope: {
@@ -10,6 +10,6 @@ function greeting() {
   }
 }
 
-export default angular.module('directives.greeting', [])
-  .directive('greeting', greeting)
+export const GreetingModuleName = angular.module('directives.greeting', [])
+  .directive('greeting', GreetingDirective)
   .name;

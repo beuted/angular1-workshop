@@ -1,6 +1,6 @@
 import * as angular from 'angular';
 
-export class RandomNames {
+export class RandomNamesService {
   private names: string[];
 
   constructor() {
@@ -14,6 +14,6 @@ export class RandomNames {
   }
 }
 
-export default angular.module('services.random-names', [])
-  .service('randomNames', RandomNames)
+export const RandomNameModuleName = angular.module('services.random-names', [])
+  .service('randomNames', RandomNamesService)
   .name;

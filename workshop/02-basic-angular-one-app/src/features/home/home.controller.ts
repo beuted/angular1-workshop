@@ -1,11 +1,11 @@
-import { RandomNames } from '../../services/randomNames.service';
+import { RandomNamesService } from '../../services/randomNames.service';
 
-export default class HomeController {
+export class HomeController {
   public name: string;
   
-  private random: RandomNames;
+  private random: RandomNamesService;
 
-  constructor(randomNames: RandomNames) {
+  constructor(randomNames: RandomNamesService) {
     this.random = randomNames;
     this.name = 'World';
   }

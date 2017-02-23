@@ -12,23 +12,19 @@ module.exports = function karmaConfig (config) {
     reporters: [
       // Reference: https://github.com/mlex/karma-spec-reporter
       // Set reporter to print detailed results to console
-      'spec',
-
-      // Reference: https://github.com/karma-runner/karma-coverage
-      // Output code coverage files
-      'coverage'
+      'spec'
     ],
 
     files: [
       // Grab all files in the app folder that contain .test.
-      'src/tests.webpack.js'
+      'src/tests.webpack.ts'
     ],
 
     preprocessors: {
       // Reference: http://webpack.github.io/docs/testing.html
       // Reference: https://github.com/webpack/karma-webpack
       // Convert files with webpack and load sourcemaps
-      'src/tests.webpack.js': ['webpack', 'sourcemap']
+      'src/**/*.ts': ['webpack', 'sourcemap']
     },
 
     browsers: [
@@ -38,10 +34,9 @@ module.exports = function karmaConfig (config) {
 
     singleRun: true,
 
-    // Configure code coverage reporter
-    coverageReporter: {
-      dir: 'build/coverage/',
-      type: 'html'
+    // This is needed for chrome to understand that .ts extension match typescript files and not video files
+    mime: {
+      'text/x-typescript': ['ts', 'tsx']
     },
 
     webpack: webpackConfig
