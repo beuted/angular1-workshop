@@ -1,5 +1,4 @@
-// Depends from:
-// * angular.js
+var angular = require('angular');
 
 var RandomNamesService = function($http) {
   this.getName = function(characterId) {
@@ -13,3 +12,5 @@ var RandomNamesService = function($http) {
 
   return this;
 }
+
+module.exports = RandomNamesService;

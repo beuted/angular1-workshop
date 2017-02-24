@@ -1,7 +1,7 @@
-var HomeController = function(randomNamesService) {
+var HomeController = function(RandomNamesService) {
   var that = this;
 
-  this.randomNamesService = randomNamesService;
+  this.randomNamesService = RandomNamesService;
   this.name = 'Human';
 
   this.changeToAbsurdName = function() {
@@ -20,5 +20,8 @@ var HomeController = function(randomNamesService) {
   return this;
 }
 
+HomeController.$inject = ['randomNames'];
+
 // TODO: Modify this controller to get random planet from your service and pass it to the directive
-  
+
+module.exports = HomeController;

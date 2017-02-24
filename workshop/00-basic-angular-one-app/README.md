@@ -57,15 +57,13 @@ angular.module('Module_B', [])
   .controller('Controller_A', ['Service_B', function(ServiceB) {/*...*/}]);
 ```
 
-> ⚠️️ "Modules" only depends on "Modules". "Services, Directives and Controller" only depends on "Services, Directives and Controller"
+> ⚠️️ "Modules" only depends on "Modules". "Services and Controller" only depends on "Services and Controller"
 
 ## Controllers
 
 ## Services
 
-## Directives
-
-## Bonus: angular-ui and App states
+## angular-ui and App states
 
 A "state" of an angular app is the object regrouping the template with the controller allowing both to interact with each others.
 All this will be linked to an url. At this url you will get a template that have been rendered with a controller.
@@ -87,8 +85,6 @@ angular.module('my-app', ['ui.router'])
 ## Architecture of the example:
 
 > **/src**
-> > **/directives** - contains all directives that share the same module: `directives`
-> >
 > > **/features**
 > > > **/home** - main module of the app containing: controllers, views and css files needed to display the home page 
 > >
@@ -111,8 +107,11 @@ angular.module('my-app', ['ui.router'])
 
 ## When your app is working fine
 
-1. Implement a service allowing to us to get a random planet from this API: http://swapi.co/documentation#planets and put this service on the `services` module in the `src/service` folder
-2. Modify the greeting directive so that it takes a `location` parameter the same way it currently takes a name parameter.
-3. Modify the Home template and controller to display a random planet when clicking the "random" button.
+1. Create an controller in a `home.controller.js` file and a template in a `home.html` file inside the `/home` folder and link them together with an `angular-ui state` in `home/module.js`
+2. Modify the Home controller and add a `name` variable on it then modify the template to display this variable.
+3. Add a service named `randomNames.service.js` in `/services` and link it the the `services/module.js`. This service should return a random name from a list of names. Then, use this service to get
+   a random name in home controller.
+4. Use [this open API](http://swapi.co/documentation#people) to get names from star wars instead. You can use [$http.get](https://docs.angularjs.org/api/ng/service/$http) to do an ajax call.
+   `$http.get` will return a promise, look at examples on the page to understand how to use it.
 
 > ⚠️️ Try to execute your code at each step to see if you broke something

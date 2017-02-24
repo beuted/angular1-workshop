@@ -73,7 +73,7 @@ $ npm install --save-dev @types/webpack
 $ npm install --save-dev @types/webpack-env
 ```
 
-After doing that your IDE should start should much less red and compilation shoulds go fine.
+After doing that your IDE should start should much less red but compilation will still fail
 
 ## Fixing the imports
 
@@ -99,5 +99,9 @@ Let's go full types and enforce Explicite typing everywhere. In tsconfig.json ch
 
 ## When your app is working fine:
 
-1. Go in the typescript configuration file `tsconfig.json` at the root of the project and change `noImplicitAny` to `true`, try fixing the build.
-2. Adapt your previous code with the new ES6 way of writing dependencies
+**TODO**
+
+1. Adapt your previous code with the new ES6 way of writing dependencies
+2. 
+3. Go in the typescript configuration file `tsconfig.json` at the root of the project and change `noImplicitAny` to `true`, try fixing the build.
+4. 

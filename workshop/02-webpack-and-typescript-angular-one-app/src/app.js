@@ -1,14 +1,9 @@
-// Depends from JS point of view from:
-// * angular.js
-// * angular-ui-router.js => for $urlRouterProvider
+require('bootstrap/dist/css/bootstrap.css');
 
-// Depends from Angular point view from:
-// * angular.js
-// * angular-ui-router.js
-// * features/home/module.js
+var angular = require('angular');
+var uirouter = require('angular-ui-router');
+var HomeModuleName = require('./home/module');
+var RoutingConfiguration = require('./app.routes');
 
-angular.module('app', ['ui.router', 'app.home'])
-  .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode(true);
-    $urlRouterProvider.otherwise('/');
-  }]);
+angular.module('app', [uirouter, HomeModuleName])
+  .config(RoutingConfiguration);
