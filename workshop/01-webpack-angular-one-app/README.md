@@ -53,7 +53,7 @@ The mechanism is quite simple: each files ends with a : `module.exports = TheObj
 Then, in another file if we want to get this object we simply do `var TheObjectWhereIWantToExport = require('./my-file');` where `./my-file` is the relative location
 of the file we want to import **minus the .js extension**.
 
-And if we need to import an external librarie, we install it with `npm` and just call it the same way in an absolute fashion: `var angular = require('angular');`
+And if we need to import an external library, we install it with `npm` and just call it the same way in an absolute fashion: `var angular = require('angular');`
 
 > ⚠️️ Webpack dependencies looking like `var toto = require('./toto');` are different from the angular dependencies we saw before, between modules or controllers and services!
 

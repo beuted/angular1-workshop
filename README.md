@@ -4,8 +4,8 @@ Repository with basic angular one lessons and exercices aiming at presenting **a
 
 > ⚠️️ If you haven't done the typescript workshop you should [have a look there first](https://github.com/beuted/typescript-workshop) before doing the PART 3.
 
-This workshop aim to give an idea of how to slowly migrate a small project in angular to typescript/webpack looks like. This will help
-us understand all this different technologies works together.
+This workshop aim to give an idea of how to slowly migrate a small project in angular to typescript/webpack. This will help
+us understand how all this different technologies works together.
 
 ## Workshops
 1. [Build a simple application with just angular 1 and ES5 javascript](./workshop/00-basic-angular-one-app)
