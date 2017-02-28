@@ -1,15 +1,6 @@
-require('./home.css');
+var homeController = require('./home.controller');
 
-var angular = require('angular');
-var uirouterName = require('angular-ui-router');
+var homeModule = angular.module('app.home', [])
+    .controller('home-controller',homeController);
 
-var RoutingConfiguration = require('./home.routes');
-var HomeController = require('./home.controller');
-var ServicesModuleName = require('../services/module');
-
-var HomeModuleName = angular.module('app.home', [uirouterName, ServicesModuleName])
-  .config(RoutingConfiguration)
-  .controller('HomeController', HomeController)
-  .name;
-
-module.exports = HomeModuleName;
+module.exports = homeModule.name;

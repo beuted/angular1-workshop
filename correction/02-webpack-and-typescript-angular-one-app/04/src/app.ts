@@ -7,11 +7,11 @@ import { ServicesModuleName } from './services/module';
 var homeTemplate = require('./home/home.html');
 
 angular.module('app', [HomeModuleName, ServicesModuleName, <any>angularUi])
-  .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
+  .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider: ng.ui.IUrlRouterProvider, $locationProvider: ng.ILocationProvider) {
         $locationProvider.html5Mode(true);
         $urlRouterProvider.otherwise('/home');
    }])
-   .config(['$stateProvider', function($stateProvider) {
+   .config(['$stateProvider', function($stateProvider: ng.ui.IStateProvider) {
        $stateProvider
             .state('home', {
                 url: '/home',

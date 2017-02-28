@@ -1,6 +1,8 @@
 import * as angular from 'angular';
-import { RandomNamesService } from './randomNames.service'
 
-export const ServicesModuleName = angular.module('services', [])
-  .service('randomNames', RandomNamesService)
-  .name;
+import { RandomNameService } from './randomName.service';
+
+var serviceModule = angular.module('app.services', [])
+    .service('randomName-service', RandomNameService);
+
+export let ServicesModuleName = serviceModule.name;

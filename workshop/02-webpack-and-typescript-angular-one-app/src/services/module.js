@@ -1,8 +1,6 @@
-var angular = require('angular');
-var RandomNamesService = require('./randomNames.service');
+var randomNameService = require('./randomName.service');
 
-var ServicesModuleName = angular.module('services', [])
-  .service('randomNames', RandomNamesService)
-  .name;
+var serviceModule = angular.module('app.services', [])
+    .service('randomName-service', randomNameService);
 
-module.exports = ServicesModuleName;
+module.exports = serviceModule.name;

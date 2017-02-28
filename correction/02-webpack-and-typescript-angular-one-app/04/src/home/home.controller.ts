@@ -1,12 +1,14 @@
+import { RandomNameService } from '../services/randomName.service'
+
 export class HomeController {
     public name: string;
 
-    constructor(private randomNameService) {
+    constructor(private randomNameService: RandomNameService) {
         this.name = 'Grenoble';        
     }
 
     public getRandomName() {
-        this.randomNameService.getName().then((name) => {
+        this.randomNameService.getName().then((name: string) => {
             this.name = name;
         });
     }

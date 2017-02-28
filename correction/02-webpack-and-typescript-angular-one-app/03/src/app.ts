@@ -1,10 +1,22 @@
-import 'bootstrap/dist/css/bootstrap.css';
+import * as angular from 'angular'
+import * as angularUi from 'angular-ui-router';
 
-import * as angular from 'angular';
-import * as uirouterModule from 'angular-ui-router';
-
-import { RoutingConfiguration } from './app.config';
 import { HomeModuleName } from './home/module';
+import { ServicesModuleName } from './services/module';
 
-angular.module('app', <string[]>[uirouterModule, HomeModuleName])
-  .config(RoutingConfiguration);
+var homeTemplate = require('./home/home.html');
+
+angular.module('app', [HomeModuleName, ServicesModuleName, <any>angularUi])
+  .config(['$urlRouterProvider', '$locationProvider', function($urlRouterProvider, $locationProvider) {
+        $locationProvider.html5Mode(true);
+        $urlRouterProvider.otherwise('/home');
+   }])
+   .config(['$stateProvider', function($stateProvider) {
+       $stateProvider
+            .state('home', {
+                url: '/home',
+                template: homeTemplate,
+                controller: 'home-controller',
+                controllerAs: 'home'
+            });
+    }]);
