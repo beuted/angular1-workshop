@@ -1,0 +1,37 @@
+{
+  "name": "webpack-angular-one-app",
+  "version": "1.0.0",
+  "description": "An example of angular 1 app using webpack",
+  "scripts": {
+    "build": "node_modules/.bin/webpack --config webpack.build.js --bail -p",
+    "dev": "node_modules/.bin/webpack-dev-server --history-api-fallback --hot --inline --progress",
+    "test": "echo \"no tests yet\"",
+    "test:live": "echo \"no tests yet\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/beuted/angular1-workshop/workshop/01-basic-angular-one-app"
+  },
+  "author": "Benoit Jehanno",
+  "license": "MIT",
+  "homepage": "https://github.com/beuted/angular1-workshop/workshop/01-basic-angular-one-app",
+  "dependencies": {
+    "angular": "1.3.16",
+    "angular-ui-router": "0.2.15",
+    "bootstrap": "3.3.5"
+  },
+  "devDependencies": {
+    "autoprefixer-core": "5.2.0",
+    "css-loader": "0.14.5",
+    "extract-text-webpack-plugin": "0.8.2",
+    "file-loader": "0.8.4",
+    "html-webpack-plugin": "1.5.2",
+    "node-libs-browser": "0.5.2",
+    "null-loader": "0.1.1",
+    "postcss-loader": "0.4.4",
+    "raw-loader": "0.5.1",
+    "style-loader": "0.12.3",
+    "webpack": "1.9.11",
+    "webpack-dev-server": "1.9.0"
+  }
+}
